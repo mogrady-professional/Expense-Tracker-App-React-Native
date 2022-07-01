@@ -1,7 +1,8 @@
 import { useLayoutEffect } from "react";
-import { View, StyleSheet, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
 import IconButton from "../components/UI/IconButton";
 import { GlobalStyles } from "../constants/styles";
+import Button from "../components/UI/Button";
 
 //  Route prop provided by react navigation
 function ManageExpense({ route, navigation }) {
@@ -16,21 +17,28 @@ function ManageExpense({ route, navigation }) {
     });
   }, [navigation, isEditing]);
 
-  function deleteExpense() {}
+  function deleteExpense() {
+    console.log("Delete expense");
+    navigation.goBack(); // go back to previous screen
+  }
 
-  function cancelHandler() {}
+  function cancelHandler() {
+    navigation.goBack(); // go back to previous screen
+  }
 
-  function confirmHandler() {}
+  function confirmHandler() {
+    navigation.goBack(); // go back to previous screen
+  }
 
   return (
     <View style={styles.container}>
       <View style={styles.buttons}>
-        <Button mode="flat" onPress={cancelHandler} title="Cancel"></Button>
-        <Button
-          style={styles.button}
-          onPress={confirmHandler}
-          title={isEditing ? "Update" : "Add"}
-        ></Button>
+        <Button style={styles.button} mode="flat" onPress={cancelHandler}>
+          Cancel
+        </Button>
+        <Button style={styles.button} onPress={confirmHandler}>
+          {isEditing ? "Update" : "Add"}
+        </Button>
       </View>
       {isEditing && (
         <View style={styles.deleteContainer}>

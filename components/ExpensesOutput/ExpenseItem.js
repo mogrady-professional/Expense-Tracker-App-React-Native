@@ -3,10 +3,10 @@ import { GlobalStyles } from "../../constants/styles";
 import { getFormattedDate } from "../../util/date";
 import { useNavigation } from "@react-navigation/native";
 
-function ExpenseItem({ description, amount, date }) {
+function ExpenseItem({ id, description, amount, date }) {
   const navigation = useNavigation();
 
-  function expressPresshandler() {
+  function expensePressHandler() {
     navigation.navigate("ManageExpense", {
       expenseId: id,
     });
@@ -14,7 +14,7 @@ function ExpenseItem({ description, amount, date }) {
 
   return (
     <Pressable
-      onPress={expressPresshandler}
+      onPress={expensePressHandler}
       style={({ pressed }) => pressed && styles.pressed}
       android_ripple={{
         color: GlobalStyles.colors.primary700,
