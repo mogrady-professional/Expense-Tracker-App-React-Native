@@ -1,8 +1,9 @@
 import { useContext } from "react";
-import { Text } from "react-native";
+
 import ExpensesOutput from "../components/ExpensesOutput/ExpensesOutput";
 import { ExpensesContext } from "../store/expenses-context";
-function ALLExpenses() {
+
+function AllExpenses() {
   const expensesCtx = useContext(ExpensesContext);
 
   return (
@@ -14,4 +15,4 @@ function ALLExpenses() {
   );
 }
 
-export default ALLExpenses;
+export default AllExpenses;
