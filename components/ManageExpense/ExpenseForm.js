@@ -22,7 +22,7 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit, defaultValues }) {
       isValid: true,
     },
   });
-  console.log(inputs);
+  // console.log(inputs);
 
   // Two way data binding
   function inputChangedHandler(inputIdentifier, enteredValue) {
